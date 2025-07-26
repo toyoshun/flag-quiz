@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import type { Country, Mode } from "../types";
 
 interface QuizScreenProps {
   mode: Mode;
   countries: Country[];
   questionIndex: number;
+  correctCountry: Country;
   totalQuestions: number;
   onAnswer: (userAnswer: string) => void;
-  correctCountry: Country | null;
-  setCorrectCountry: (country: Country) => void;
   setUserAnswer: (userAnswer: string) => void;
 }
-
-const getRandomCountry = (countries: Country[], usedCountry: Set<string>) => {
-  const unused = countries.filter((country) => !usedCountry.has(country.name));
-  return unused[Math.floor(Math.random() * unused.length)];
-};
 
 const getOptions = (countries: Country[], correctCountry: Country) => {
   const shuffled = [...countries]
@@ -29,27 +23,17 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
   mode,
   countries,
   questionIndex,
+  correctCountry,
   totalQuestions,
   onAnswer,
-  correctCountry,
-  setCorrectCountry,
   setUserAnswer,
 }) => {
-  const [usedCountries] = useState<Set<string>>(new Set());
   const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const nextCountry = getRandomCountry(countries, usedCountries);
-    usedCountries.add(nextCountry.name);
-    setCorrectCountry(nextCountry);
-  }, [questionIndex]);
 
   const handleSubmit = (answer: string) => {
     setUserAnswer(answer);
     onAnswer(answer);
   };
-
-  if (!correctCountry) return <div className="screen-wrapper">Loading...</div>;
 
   return (
     <div className="screen-wrapper">
@@ -57,11 +41,20 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
         Question {questionIndex + 1} of {totalQuestions}
       </p>
 
-      <img
-        src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
-        alt="Flag"
-        className="flag-image"
-      />
+      <div
+        style={{
+          minHeight: 160,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
+          alt="Flag"
+          className="flag-image"
+        />
+      </div>
 
       {mode === "easy" ? (
         <div className="option-container">

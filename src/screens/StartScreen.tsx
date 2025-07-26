@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Mode, Region } from "../types";
+import type { Mode, Region, Country } from "../types";
 
 const regions: Region[] = [
   "World",
@@ -10,14 +10,42 @@ const regions: Region[] = [
   "Oceania",
 ];
 
+const questionCounts = [5, 10, 20, 30, 40, 50, 100];
+
 export const StartScreen: React.FC<{
-  onStart: (mode: Mode, region: Region) => void;
-}> = ({ onStart }) => {
+  onStart: (mode: Mode, region: Region, totalQuestions: number) => void;
+  allCountries: Country[];
+}> = ({ onStart, allCountries }) => {
   const [selectedMode, setSelectedMode] = useState<Mode>("easy");
   const [selectedRegion, setSelectedRegion] = useState<Region>("World");
+  const [selectedCount, setSelectedCount] = useState<number>(10);
+
+  // 選択中regionの国数を計算
+  const filteredCountries =
+    selectedRegion === "World"
+      ? allCountries
+      : allCountries.filter((c) => c.region === selectedRegion);
+  const maxCount = filteredCountries.length;
+
+  // region内の国数以下の選択肢だけ表示
+  const availableCounts = questionCounts.filter((count) => count <= maxCount);
+
+  // 「すべて」選択肢を追加
+  const countsWithAll = [
+    ...availableCounts,
+    ...(availableCounts.includes(maxCount) ? [] : [maxCount]),
+  ];
+
+  // 選択肢が減った場合、selectedCountが最大値を超えていたら修正
+  React.useEffect(() => {
+    if (selectedCount > maxCount) {
+      setSelectedCount(countsWithAll[countsWithAll.length - 1]);
+    }
+    // eslint-disable-next-line
+  }, [selectedRegion]);
 
   return (
-    <div className="start-container">
+    <div className="screen-wrapper">
       <h1 className="start-title">Flag Quiz</h1>
 
       <div className="select-group">
@@ -47,9 +75,27 @@ export const StartScreen: React.FC<{
         </select>
       </div>
 
+      <div className="select-group">
+        <label className="select-label">Number of Questions:</label>
+        <select
+          className="select-input"
+          value={selectedCount}
+          onChange={(e) => setSelectedCount(Number(e.target.value))}
+        >
+          {countsWithAll.map((count) => (
+            <option key={count} value={count}>
+              {count === maxCount ? `All (${maxCount})` : count}
+            </option>
+          ))}
+        </select>
+        <div className="text-sm text-gray-500 mt-1">
+          {maxCount} countries in this region
+        </div>
+      </div>
+
       <button
         className="start-button"
-        onClick={() => onStart(selectedMode, selectedRegion)}
+        onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
       >
         Start
       </button>

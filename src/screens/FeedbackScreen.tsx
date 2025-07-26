@@ -3,7 +3,7 @@ import type { Country } from "../types";
 
 interface FeedbackScreenProps {
   isCorrect: boolean;
-  correctCountry: Country | null;
+  correctCountry: Country;
   userAnswer: string;
   onNext: () => void;
   currentIndex: number;
@@ -39,10 +39,10 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
       )}
 
       <p className="paragraph-main">Correct answer:</p>
-      <p className="mb-4 text-xl font-bold">{correctCountry?.name}</p>
+      <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
 
       <img
-        src={`https://flagcdn.com/${correctCountry?.code.toLowerCase()}.svg`}
+        src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
         alt={`Flag of ${correctCountry?.name}`}
         className="flag-image"
       />

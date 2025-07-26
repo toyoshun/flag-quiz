@@ -63,7 +63,7 @@
 }
 
 .flag-image {
-  @apply object-contain w-40 mb-4 border h-28 md:w-56 md:h-40;
+  @apply object-contain h-40 w-auto mb-4 bg-blue-50 border border-gray-200 shadow mx-auto;
 }
 
 .btn-main {

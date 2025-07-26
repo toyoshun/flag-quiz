@@ -51,24 +51,6 @@
   },
   {
     "name": {
-      "common": "Norfolk Island",
-      "official": "Territory of Norfolk Island",
-      "nativeName": {
-        "eng": {
-          "official": "Territory of Norfolk Island",
-          "common": "Norfolk Island"
-        },
-        "pih": {
-          "official": "Teratri of Norf'k Ailen",
-          "common": "Norf'k Ailen"
-        }
-      }
-    },
-    "cca2": "NF",
-    "region": "Oceania"
-  },
-  {
-    "name": {
       "common": "Slovenia",
       "official": "Republic of Slovenia",
       "nativeName": {
@@ -91,34 +73,6 @@
     },
     "cca2": "GY",
     "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "South Georgia",
-      "official": "South Georgia and the South Sandwich Islands",
-      "nativeName": {
-        "eng": {
-          "official": "South Georgia and the South Sandwich Islands",
-          "common": "South Georgia"
-        }
-      }
-    },
-    "cca2": "GS",
-    "region": "Antarctic"
-  },
-  {
-    "name": {
-      "common": "Christmas Island",
-      "official": "Territory of Christmas Island",
-      "nativeName": {
-        "eng": {
-          "official": "Territory of Christmas Island",
-          "common": "Christmas Island"
-        }
-      }
-    },
-    "cca2": "CX",
-    "region": "Oceania"
   },
   {
     "name": {
@@ -235,18 +189,6 @@
   },
   {
     "name": {
-      "common": "Faroe Islands",
-      "official": "Faroe Islands",
-      "nativeName": {
-        "dan": { "official": "Færøerne", "common": "Færøerne" },
-        "fao": { "official": "Føroyar", "common": "Føroyar" }
-      }
-    },
-    "cca2": "FO",
-    "region": "Europe"
-  },
-  {
-    "name": {
       "common": "United Arab Emirates",
       "official": "United Arab Emirates",
       "nativeName": {
@@ -296,15 +238,6 @@
   },
   {
     "name": {
-      "common": "Palestine",
-      "official": "State of Palestine",
-      "nativeName": { "ara": { "official": "دولة فلسطين", "common": "فلسطين" } }
-    },
-    "cca2": "PS",
-    "region": "Asia"
-  },
-  {
-    "name": {
       "common": "Djibouti",
       "official": "Republic of Djibouti",
       "nativeName": {
@@ -342,20 +275,6 @@
   },
   {
     "name": {
-      "common": "French Polynesia",
-      "official": "French Polynesia",
-      "nativeName": {
-        "fra": {
-          "official": "Polynésie française",
-          "common": "Polynésie française"
-        }
-      }
-    },
-    "cca2": "PF",
-    "region": "Oceania"
-  },
-  {
-    "name": {
       "common": "Myanmar",
       "official": "Republic of the Union of Myanmar",
       "nativeName": {
@@ -367,17 +286,6 @@
     },
     "cca2": "MM",
     "region": "Asia"
-  },
-  {
-    "name": {
-      "common": "Gibraltar",
-      "official": "Gibraltar",
-      "nativeName": {
-        "eng": { "official": "Gibraltar", "common": "Gibraltar" }
-      }
-    },
-    "cca2": "GI",
-    "region": "Europe"
   },
   {
     "name": {
@@ -440,20 +348,6 @@
   },
   {
     "name": {
-      "common": "United States Virgin Islands",
-      "official": "Virgin Islands of the United States",
-      "nativeName": {
-        "eng": {
-          "official": "Virgin Islands of the United States",
-          "common": "United States Virgin Islands"
-        }
-      }
-    },
-    "cca2": "VI",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Guinea",
       "official": "Republic of Guinea",
       "nativeName": {
@@ -462,21 +356,6 @@
     },
     "cca2": "GN",
     "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Hong Kong",
-      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
-      "nativeName": {
-        "eng": {
-          "official": "Hong Kong Special Administrative Region of the People's Republic of China",
-          "common": "Hong Kong"
-        },
-        "zho": { "official": "中华人民共和国香港特别行政区", "common": "香港" }
-      }
-    },
-    "cca2": "HK",
-    "region": "Asia"
   },
   {
     "name": {
@@ -532,32 +411,6 @@
       }
     },
     "cca2": "SR",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Guernsey",
-      "official": "Bailiwick of Guernsey",
-      "nativeName": {
-        "eng": { "official": "Bailiwick of Guernsey", "common": "Guernsey" },
-        "fra": { "official": "Bailliage de Guernesey", "common": "Guernesey" },
-        "nfr": { "official": "Dgèrnésiais", "common": "Dgèrnésiais" }
-      }
-    },
-    "cca2": "GG",
-    "region": "Europe"
-  },
-  {
-    "name": {
-      "common": "Curaçao",
-      "official": "Country of Curaçao",
-      "nativeName": {
-        "eng": { "official": "Country of Curaçao", "common": "Curaçao" },
-        "nld": { "official": "Land Curaçao", "common": "Curaçao" },
-        "pap": { "official": "Pais Kòrsou", "common": "Pais Kòrsou" }
-      }
-    },
-    "cca2": "CW",
     "region": "Americas"
   },
   {
@@ -672,41 +525,6 @@
   },
   {
     "name": {
-      "common": "Cayman Islands",
-      "official": "Cayman Islands",
-      "nativeName": {
-        "eng": { "official": "Cayman Islands", "common": "Cayman Islands" }
-      }
-    },
-    "cca2": "KY",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Martinique",
-      "official": "Martinique",
-      "nativeName": {
-        "fra": { "official": "Martinique", "common": "Martinique" }
-      }
-    },
-    "cca2": "MQ",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Sint Maarten",
-      "official": "Sint Maarten",
-      "nativeName": {
-        "eng": { "official": "Sint Maarten", "common": "Sint Maarten" },
-        "fra": { "official": "Saint-Martin", "common": "Saint-Martin" },
-        "nld": { "official": "Sint Maarten", "common": "Sint Maarten" }
-      }
-    },
-    "cca2": "SX",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Mali",
       "official": "Republic of Mali",
       "nativeName": {
@@ -790,17 +608,6 @@
   },
   {
     "name": {
-      "common": "Réunion",
-      "official": "Réunion Island",
-      "nativeName": {
-        "fra": { "official": "Ile de la Réunion", "common": "La Réunion" }
-      }
-    },
-    "cca2": "RE",
-    "region": "Africa"
-  },
-  {
-    "name": {
       "common": "Guinea-Bissau",
       "official": "Republic of Guinea-Bissau",
       "nativeName": {
@@ -851,20 +658,6 @@
     },
     "cca2": "TM",
     "region": "Asia"
-  },
-  {
-    "name": {
-      "common": "French Southern and Antarctic Lands",
-      "official": "Territory of the French Southern and Antarctic Lands",
-      "nativeName": {
-        "fra": {
-          "official": "Territoire des Terres australes et antarctiques françaises",
-          "common": "Terres australes et antarctiques françaises"
-        }
-      }
-    },
-    "cca2": "TF",
-    "region": "Antarctic"
   },
   {
     "name": {
@@ -1037,18 +830,6 @@
   },
   {
     "name": {
-      "common": "Niue",
-      "official": "Niue",
-      "nativeName": {
-        "eng": { "official": "Niue", "common": "Niue" },
-        "niu": { "official": "Niuē", "common": "Niuē" }
-      }
-    },
-    "cca2": "NU",
-    "region": "Oceania"
-  },
-  {
-    "name": {
       "common": "Bahamas",
       "official": "Commonwealth of the Bahamas",
       "nativeName": {
@@ -1144,19 +925,6 @@
   },
   {
     "name": {
-      "common": "Jersey",
-      "official": "Bailiwick of Jersey",
-      "nativeName": {
-        "eng": { "official": "Bailiwick of Jersey", "common": "Jersey" },
-        "fra": { "official": "Bailliage de Jersey", "common": "Jersey" },
-        "nrf": { "official": "Bailliage dé Jèrri", "common": "Jèrri" }
-      }
-    },
-    "cca2": "JE",
-    "region": "Europe"
-  },
-  {
-    "name": {
       "common": "Honduras",
       "official": "Republic of Honduras",
       "nativeName": {
@@ -1168,28 +936,6 @@
   },
   {
     "name": {
-      "common": "Western Sahara",
-      "official": "Sahrawi Arab Democratic Republic",
-      "nativeName": {
-        "ber": {
-          "official": "Sahrawi Arab Democratic Republic",
-          "common": "Western Sahara"
-        },
-        "mey": {
-          "official": "الجمهورية العربية الصحراوية الديمقراطية",
-          "common": "الصحراء الغربية"
-        },
-        "spa": {
-          "official": "República Árabe Saharaui Democrática",
-          "common": "Sahara Occidental"
-        }
-      }
-    },
-    "cca2": "EH",
-    "region": "Africa"
-  },
-  {
-    "name": {
       "common": "Senegal",
       "official": "Republic of Senegal",
       "nativeName": {
@@ -1198,20 +944,6 @@
     },
     "cca2": "SN",
     "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Svalbard and Jan Mayen",
-      "official": "Svalbard og Jan Mayen",
-      "nativeName": {
-        "nor": {
-          "official": "Svalbard og Jan Mayen",
-          "common": "Svalbard og Jan Mayen"
-        }
-      }
-    },
-    "cca2": "SJ",
-    "region": "Europe"
   },
   {
     "name": {
@@ -1277,15 +1009,6 @@
   },
   {
     "name": {
-      "common": "Anguilla",
-      "official": "Anguilla",
-      "nativeName": { "eng": { "official": "Anguilla", "common": "Anguilla" } }
-    },
-    "cca2": "AI",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Nigeria",
       "official": "Federal Republic of Nigeria",
       "nativeName": {
@@ -1311,20 +1034,6 @@
   },
   {
     "name": {
-      "common": "British Virgin Islands",
-      "official": "Virgin Islands",
-      "nativeName": {
-        "eng": {
-          "official": "Virgin Islands",
-          "common": "British Virgin Islands"
-        }
-      }
-    },
-    "cca2": "VG",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Marshall Islands",
       "official": "Republic of the Marshall Islands",
       "nativeName": {
@@ -1340,17 +1049,6 @@
     },
     "cca2": "MH",
     "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Mayotte",
-      "official": "Department of Mayotte",
-      "nativeName": {
-        "fra": { "official": "Département de Mayotte", "common": "Mayotte" }
-      }
-    },
-    "cca2": "YT",
-    "region": "Africa"
   },
   {
     "name": {
@@ -1399,20 +1097,6 @@
   },
   {
     "name": {
-      "common": "United States Minor Outlying Islands",
-      "official": "United States Minor Outlying Islands",
-      "nativeName": {
-        "eng": {
-          "official": "United States Minor Outlying Islands",
-          "common": "United States Minor Outlying Islands"
-        }
-      }
-    },
-    "cca2": "UM",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Central African Republic",
       "official": "Central African Republic",
       "nativeName": {
@@ -1425,21 +1109,6 @@
     },
     "cca2": "CF",
     "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Macau",
-      "official": "Macao Special Administrative Region of the People's Republic of China",
-      "nativeName": {
-        "por": {
-          "official": "Região Administrativa Especial de Macau da República Popular da China",
-          "common": "Macau"
-        },
-        "zho": { "official": "中华人民共和国澳门特别行政区", "common": "澳门" }
-      }
-    },
-    "cca2": "MO",
-    "region": "Asia"
   },
   {
     "name": {
@@ -1539,20 +1208,6 @@
   },
   {
     "name": {
-      "common": "Cocos (Keeling) Islands",
-      "official": "Territory of the Cocos (Keeling) Islands",
-      "nativeName": {
-        "eng": {
-          "official": "Territory of the Cocos (Keeling) Islands",
-          "common": "Cocos (Keeling) Islands"
-        }
-      }
-    },
-    "cca2": "CC",
-    "region": "Oceania"
-  },
-  {
-    "name": {
       "common": "Sri Lanka",
       "official": "Democratic Socialist Republic of Sri Lanka",
       "nativeName": {
@@ -1635,20 +1290,6 @@
     },
     "cca2": "FM",
     "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Heard Island and McDonald Islands",
-      "official": "Heard Island and McDonald Islands",
-      "nativeName": {
-        "eng": {
-          "official": "Heard Island and McDonald Islands",
-          "common": "Heard Island and McDonald Islands"
-        }
-      }
-    },
-    "cca2": "HM",
-    "region": "Antarctic"
   },
   {
     "name": {
@@ -1740,46 +1381,6 @@
     },
     "cca2": "TD",
     "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Saint Helena, Ascension and Tristan da Cunha",
-      "official": "Saint Helena, Ascension and Tristan da Cunha",
-      "nativeName": {
-        "eng": {
-          "official": "Saint Helena, Ascension and Tristan da Cunha",
-          "common": "Saint Helena, Ascension and Tristan da Cunha"
-        }
-      }
-    },
-    "cca2": "SH",
-    "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Cook Islands",
-      "official": "Cook Islands",
-      "nativeName": {
-        "eng": { "official": "Cook Islands", "common": "Cook Islands" },
-        "rar": { "official": "Kūki 'Āirani", "common": "Kūki 'Āirani" }
-      }
-    },
-    "cca2": "CK",
-    "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Saint Pierre and Miquelon",
-      "official": "Saint Pierre and Miquelon",
-      "nativeName": {
-        "fra": {
-          "official": "Collectivité territoriale de Saint-Pierre-et-Miquelon",
-          "common": "Saint-Pierre-et-Miquelon"
-        }
-      }
-    },
-    "cca2": "PM",
-    "region": "Americas"
   },
   {
     "name": {
@@ -2126,17 +1727,6 @@
   },
   {
     "name": {
-      "common": "Guadeloupe",
-      "official": "Guadeloupe",
-      "nativeName": {
-        "fra": { "official": "Guadeloupe", "common": "Guadeloupe" }
-      }
-    },
-    "cca2": "GP",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Belarus",
       "official": "Republic of Belarus",
       "nativeName": {
@@ -2394,38 +1984,6 @@
   },
   {
     "name": {
-      "common": "Bermuda",
-      "official": "Bermuda",
-      "nativeName": { "eng": { "official": "Bermuda", "common": "Bermuda" } }
-    },
-    "cca2": "BM",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "New Caledonia",
-      "official": "New Caledonia",
-      "nativeName": {
-        "fra": {
-          "official": "Nouvelle-Calédonie",
-          "common": "Nouvelle-Calédonie"
-        }
-      }
-    },
-    "cca2": "NC",
-    "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Antarctica",
-      "official": "Antarctica",
-      "nativeName": {}
-    },
-    "cca2": "AQ",
-    "region": "Antarctic"
-  },
-  {
-    "name": {
       "common": "Egypt",
       "official": "Arab Republic of Egypt",
       "nativeName": {
@@ -2451,24 +2009,6 @@
   },
   {
     "name": {
-      "common": "Puerto Rico",
-      "official": "Commonwealth of Puerto Rico",
-      "nativeName": {
-        "eng": {
-          "official": "Commonwealth of Puerto Rico",
-          "common": "Puerto Rico"
-        },
-        "spa": {
-          "official": "Estado Libre Asociado de Puerto Rico",
-          "common": "Puerto Rico"
-        }
-      }
-    },
-    "cca2": "PR",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Trinidad and Tobago",
       "official": "Republic of Trinidad and Tobago",
       "nativeName": {
@@ -2479,17 +2019,6 @@
       }
     },
     "cca2": "TT",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Falkland Islands",
-      "official": "Falkland Islands",
-      "nativeName": {
-        "eng": { "official": "Falkland Islands", "common": "Falkland Islands" }
-      }
-    },
-    "cca2": "FK",
     "region": "Americas"
   },
   {
@@ -2513,42 +2042,6 @@
     },
     "cca2": "CN",
     "region": "Asia"
-  },
-  {
-    "name": {
-      "common": "Montserrat",
-      "official": "Montserrat",
-      "nativeName": {
-        "eng": { "official": "Montserrat", "common": "Montserrat" }
-      }
-    },
-    "cca2": "MS",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Turks and Caicos Islands",
-      "official": "Turks and Caicos Islands",
-      "nativeName": {
-        "eng": {
-          "official": "Turks and Caicos Islands",
-          "common": "Turks and Caicos Islands"
-        }
-      }
-    },
-    "cca2": "TC",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Åland Islands",
-      "official": "Åland Islands",
-      "nativeName": {
-        "swe": { "official": "Landskapet Åland", "common": "Åland" }
-      }
-    },
-    "cca2": "AX",
-    "region": "Europe"
   },
   {
     "name": {
@@ -2589,17 +2082,6 @@
   },
   {
     "name": {
-      "common": "Bouvet Island",
-      "official": "Bouvet Island",
-      "nativeName": {
-        "nor": { "official": "Bouvetøya", "common": "Bouvetøya" }
-      }
-    },
-    "cca2": "BV",
-    "region": "Antarctic"
-  },
-  {
-    "name": {
       "common": "Estonia",
       "official": "Republic of Estonia",
       "nativeName": {
@@ -2619,15 +2101,6 @@
     },
     "cca2": "LC",
     "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Taiwan",
-      "official": "Republic of China (Taiwan)",
-      "nativeName": { "zho": { "official": "中華民國", "common": "台灣" } }
-    },
-    "cca2": "TW",
-    "region": "Asia"
   },
   {
     "name": {
@@ -2717,39 +2190,6 @@
   },
   {
     "name": {
-      "common": "Northern Mariana Islands",
-      "official": "Commonwealth of the Northern Mariana Islands",
-      "nativeName": {
-        "cal": {
-          "official": "Commonwealth of the Northern Mariana Islands",
-          "common": "Northern Mariana Islands"
-        },
-        "cha": {
-          "official": "Sankattan Siha Na Islas Mariånas",
-          "common": "Na Islas Mariånas"
-        },
-        "eng": {
-          "official": "Commonwealth of the Northern Mariana Islands",
-          "common": "Northern Mariana Islands"
-        }
-      }
-    },
-    "cca2": "MP",
-    "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Saint Martin",
-      "official": "Saint Martin",
-      "nativeName": {
-        "fra": { "official": "Saint-Martin", "common": "Saint-Martin" }
-      }
-    },
-    "cca2": "MF",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Nauru",
       "official": "Republic of Nauru",
       "nativeName": {
@@ -2829,19 +2269,6 @@
   },
   {
     "name": {
-      "common": "Guam",
-      "official": "Guam",
-      "nativeName": {
-        "cha": { "official": "Guåhån", "common": "Guåhån" },
-        "eng": { "official": "Guam", "common": "Guam" },
-        "spa": { "official": "Guam", "common": "Guam" }
-      }
-    },
-    "cca2": "GU",
-    "region": "Oceania"
-  },
-  {
-    "name": {
       "common": "Bahrain",
       "official": "Kingdom of Bahrain",
       "nativeName": {
@@ -2850,20 +2277,6 @@
     },
     "cca2": "BH",
     "region": "Asia"
-  },
-  {
-    "name": {
-      "common": "Wallis and Futuna",
-      "official": "Territory of the Wallis and Futuna Islands",
-      "nativeName": {
-        "fra": {
-          "official": "Territoire des îles Wallis et Futuna",
-          "common": "Wallis et Futuna"
-        }
-      }
-    },
-    "cca2": "WF",
-    "region": "Oceania"
   },
   {
     "name": {
@@ -2886,19 +2299,6 @@
     },
     "cca2": "PA",
     "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "Tokelau",
-      "official": "Tokelau",
-      "nativeName": {
-        "eng": { "official": "Tokelau", "common": "Tokelau" },
-        "smo": { "official": "Tokelau", "common": "Tokelau" },
-        "tkl": { "official": "Tokelau", "common": "Tokelau" }
-      }
-    },
-    "cca2": "TK",
-    "region": "Oceania"
   },
   {
     "name": {
@@ -2934,38 +2334,6 @@
       }
     },
     "cca2": "GM",
-    "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Caribbean Netherlands",
-      "official": "Bonaire, Sint Eustatius and Saba",
-      "nativeName": {
-        "nld": {
-          "official": "Bonaire, Sint Eustatius en Saba",
-          "common": "Caribisch Nederland"
-        },
-        "pap": {
-          "official": "Boneiru, Sint Eustatius y Saba",
-          "common": "Boneiru, Sint Eustatius y Saba"
-        }
-      }
-    },
-    "cca2": "BQ",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "British Indian Ocean Territory",
-      "official": "British Indian Ocean Territory",
-      "nativeName": {
-        "eng": {
-          "official": "British Indian Ocean Territory",
-          "common": "British Indian Ocean Territory"
-        }
-      }
-    },
-    "cca2": "IO",
     "region": "Africa"
   },
   {
@@ -3027,55 +2395,6 @@
   },
   {
     "name": {
-      "common": "Saint Barthélemy",
-      "official": "Collectivity of Saint Barthélemy",
-      "nativeName": {
-        "fra": {
-          "official": "Collectivité de Saint-Barthélemy",
-          "common": "Saint-Barthélemy"
-        }
-      }
-    },
-    "cca2": "BL",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "American Samoa",
-      "official": "American Samoa",
-      "nativeName": {
-        "eng": { "official": "American Samoa", "common": "American Samoa" },
-        "smo": { "official": "Sāmoa Amelika", "common": "Sāmoa Amelika" }
-      }
-    },
-    "cca2": "AS",
-    "region": "Oceania"
-  },
-  {
-    "name": {
-      "common": "Aruba",
-      "official": "Aruba",
-      "nativeName": {
-        "nld": { "official": "Aruba", "common": "Aruba" },
-        "pap": { "official": "Aruba", "common": "Aruba" }
-      }
-    },
-    "cca2": "AW",
-    "region": "Americas"
-  },
-  {
-    "name": {
-      "common": "French Guiana",
-      "official": "Guiana",
-      "nativeName": {
-        "fra": { "official": "Guyane", "common": "Guyane française" }
-      }
-    },
-    "cca2": "GF",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Palau",
       "official": "Republic of Palau",
       "nativeName": {
@@ -3122,29 +2441,6 @@
   },
   {
     "name": {
-      "common": "Isle of Man",
-      "official": "Isle of Man",
-      "nativeName": {
-        "eng": { "official": "Isle of Man", "common": "Isle of Man" },
-        "glv": { "official": "Ellan Vannin or Mannin", "common": "Mannin" }
-      }
-    },
-    "cca2": "IM",
-    "region": "Europe"
-  },
-  {
-    "name": {
-      "common": "Greenland",
-      "official": "Greenland",
-      "nativeName": {
-        "kal": { "official": "Kalaallit Nunaat", "common": "Kalaallit Nunaat" }
-      }
-    },
-    "cca2": "GL",
-    "region": "Americas"
-  },
-  {
-    "name": {
       "common": "Zimbabwe",
       "official": "Republic of Zimbabwe",
       "nativeName": {
@@ -3167,20 +2463,6 @@
     },
     "cca2": "ZW",
     "region": "Africa"
-  },
-  {
-    "name": {
-      "common": "Pitcairn Islands",
-      "official": "Pitcairn Group of Islands",
-      "nativeName": {
-        "eng": {
-          "official": "Pitcairn Group of Islands",
-          "common": "Pitcairn Islands"
-        }
-      }
-    },
-    "cca2": "PN",
-    "region": "Oceania"
   },
   {
     "name": {
