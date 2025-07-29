@@ -74,7 +74,9 @@ body {
 /* --- Common --- */
 
 .screen-wrapper {
-  @apply flex items-center justify-center min-h-screen px-4 bg-gray-100;
+  /* use dynamic viewport units to avoid extra scrolling on mobile */
+  @apply flex items-center justify-center min-h-[100dvh] px-4 bg-gray-100;
+  overscroll-behavior: none;
 }
 
 .card {
