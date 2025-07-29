@@ -89,7 +89,7 @@ const App: React.FC = () => {
       allCountries,
       selectedRegion
     );
-    const shuffledCountries = filteredCountries
+    const shuffledCountries = [...filteredCountries]
       .sort(() => 0.5 - Math.random())
       .slice(0, selectedTotal);
 
