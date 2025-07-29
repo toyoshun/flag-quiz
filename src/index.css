@@ -28,11 +28,11 @@ body {
 }
 
 .start-button {
-  @apply px-6 py-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700;
+  @apply w-full max-w-xs mx-auto px-6 py-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700;
 }
 
 .resume-button {
-  @apply px-6 py-2 font-semibold text-white transition-colors bg-green-600 rounded-full hover:bg-green-700;
+  @apply w-full max-w-xs mx-auto px-6 py-2 font-semibold text-white transition-colors bg-green-600 rounded-full hover:bg-green-700;
 }
 
 /* --- Quiz Screen --- */
@@ -63,20 +63,25 @@ body {
 }
 
 /* --- Common --- */
+
 .screen-wrapper {
   @apply flex items-center justify-center min-h-screen px-4 bg-gray-100;
 }
 
 .card {
-  @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-20 sm:pt-24;
+  @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-16 sm:pt-20;
+  height: calc(100svh - 2rem);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .flag-image {
-  @apply object-contain h-40 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto;
+  @apply object-contain h-32 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto;
 }
 
 .btn-main {
-  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
+  @apply w-full max-w-xs mx-auto px-4 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
 }
 
 .btn-quit {

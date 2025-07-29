@@ -29,32 +29,34 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <div className="card">
+      <div className="card flex flex-col">
         <button className="btn-quit-top" onClick={onPause}>
           ⏸️ Pause
         </button>
-        <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
-          {message}
-        </h2>
+        <div className="flex-1 flex flex-col items-center">
+          <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
+            {message}
+          </h2>
 
-      <p className="paragraph-main">
-        Question {currentIndex + 1} of {totalQuestions} 📝
-      </p>
+          <p className="paragraph-main">
+            Question {currentIndex + 1} of {totalQuestions} 📝
+          </p>
 
-      {!isCorrect && (
-        <div className="mb-4 text-red-600">
-          <p className="paragraph-main">Your answer: {userAnswer}</p>
+          {!isCorrect && (
+            <div className="mb-4 text-red-600">
+              <p className="paragraph-main">Your answer: {userAnswer}</p>
+            </div>
+          )}
+
+          <p className="paragraph-main">Correct answer ✅:</p>
+          <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
+
+          <img
+            src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
+            alt={`Flag of ${correctCountry?.name}`}
+            className="flag-image"
+          />
         </div>
-      )}
-
-      <p className="paragraph-main">Correct answer ✅:</p>
-      <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
-
-      <img
-        src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
-        alt={`Flag of ${correctCountry?.name}`}
-        className="flag-image"
-      />
 
         <div className="mt-6">
           <button className="btn-main" onClick={onNext}>
