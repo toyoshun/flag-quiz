@@ -142,6 +142,7 @@ const App: React.FC = () => {
           totalQuestions={totalQuestions}
           onAnswer={handleAnswer}
           setUserAnswer={setUserAnswer}
+          onQuit={restartQuiz}
         />
       )}
       {screen === "feedback" && (
@@ -152,6 +153,7 @@ const App: React.FC = () => {
           currentIndex={questionIndex}
           totalQuestions={totalQuestions}
           onNext={nextQuestion}
+          onQuit={restartQuiz}
         />
       )}
       {screen === "result" && (

@@ -59,7 +59,7 @@
 
 /* --- Common --- */
 .screen-wrapper {
-  @apply flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100;
+  @apply relative flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100;
 }
 
 .flag-image {
@@ -68,6 +68,14 @@
 
 .btn-main {
   @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
+}
+
+.btn-quit {
+  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition bg-red-600 rounded hover:bg-red-700;
+}
+
+.btn-quit-top {
+  @apply absolute top-4 right-4 px-3 py-1 font-semibold text-white transition bg-red-600 rounded hover:bg-red-700;
 }
 
 .heading-main {
