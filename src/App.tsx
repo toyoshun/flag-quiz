@@ -158,6 +158,39 @@ const App: React.FC = () => {
     setScreen("start");
   };
 
+  // Treat closing or reloading the tab as pausing the quiz
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      const next = screen === "feedback" ? "feedback-next" : screen;
+      const data = {
+        screen: "start",
+        mode,
+        questionIndex,
+        score,
+        countries,
+        userAnswer,
+        isCorrect,
+        totalQuestions,
+        isPaused: true,
+        resumeScreen: next,
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [
+    screen,
+    mode,
+    questionIndex,
+    score,
+    countries,
+    userAnswer,
+    isCorrect,
+    totalQuestions,
+  ]);
+
   return (
     <div className="min-h-screen text-gray-800 bg-gray-50">
       {screen === "start" && (
