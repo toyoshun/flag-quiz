@@ -69,15 +69,15 @@ body {
 }
 
 .card {
-  @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-20 sm:pt-24;
+  @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-16 sm:pt-20;
   height: calc(100svh - 2rem);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .flag-image {
-  @apply object-contain h-40 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto;
+  @apply object-contain h-32 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto;
 }
 
 .btn-main {
