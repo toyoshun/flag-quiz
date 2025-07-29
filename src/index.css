@@ -67,7 +67,7 @@
 }
 
 .btn-main {
-  @apply px-6 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
+  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
 }
 
 .heading-main {
@@ -78,6 +78,3 @@
   @apply mb-2 text-lg;
 }
 
-.btn-main {
-  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition bg-blue-600 rounded hover:bg-blue-700;
-}
