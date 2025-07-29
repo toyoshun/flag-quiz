@@ -15,7 +15,7 @@ body {
 }
 
 .select-group {
-  @apply w-full max-w-xs mb-4;
+  @apply w-full max-w-xs mb-4 mx-auto;
 }
 
 .select-group:last-of-type {
@@ -68,7 +68,7 @@ body {
 }
 
 .screen-card {
-  @apply w-full max-w-md p-6 bg-white/80 rounded-xl shadow-lg backdrop-blur border border-gray-200 mx-auto text-center;
+  @apply relative w-full max-w-md p-6 bg-white/80 rounded-xl shadow-lg backdrop-blur border border-gray-200 mx-auto text-center;
 }
 
 .flag-image {
