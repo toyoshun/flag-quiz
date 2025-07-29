@@ -6,9 +6,6 @@ body {
 }
 
 /* --- Start Screen --- */
-.start-container {
-  @apply card;
-}
 
 .start-title {
   @apply mb-8 text-4xl font-semibold text-gray-800;
