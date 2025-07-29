@@ -16,7 +16,7 @@ body {
 /* --- Start Screen --- */
 
 .start-title {
-  @apply mb-8 text-4xl font-semibold text-gray-800;
+  @apply mb-8 text-4xl font-semibold text-gray-800 animate-fade-in;
 }
 
 .select-group {
@@ -82,10 +82,11 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  @apply animate-fade-in;
 }
 
 .flag-image {
-  @apply object-contain h-32 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto;
+  @apply object-contain h-32 w-auto mb-4 bg-blue-50 border border-gray-200 shadow rounded-lg mx-auto hover:animate-pulse;
 }
 
 .btn-main {
