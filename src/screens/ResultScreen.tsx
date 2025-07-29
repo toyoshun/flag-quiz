@@ -14,14 +14,14 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
   return (
     <div className="screen-wrapper">
       <div className="card">
-        <h2 className="heading-main">Quiz Finished!</h2>
-        <p className="paragraph-main">You scored:</p>
+        <h2 className="heading-main">Quiz Finished! 🎊</h2>
+        <p className="paragraph-main">You scored 🏅:</p>
         <p className="text-score">
           {score} / {total}
         </p>
 
         <button className="btn-main" onClick={onRestart}>
-          Play Again
+          Play Again 🔄
         </button>
       </div>
     </div>

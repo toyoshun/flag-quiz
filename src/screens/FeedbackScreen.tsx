@@ -22,20 +22,20 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 }) => {
   const message = isCorrect ? "Correct! 🎉" : "Wrong! ❌";
   const buttonText =
-    currentIndex + 1 === totalQuestions ? "See Results" : "Next Question";
+    currentIndex + 1 === totalQuestions ? "See Results 🏁" : "Next Question ➡️";
 
   return (
     <div className="screen-wrapper">
       <div className="card">
         <button className="btn-quit-top" onClick={onPause}>
-          Pause Quiz
+          ⏸️ Pause
         </button>
         <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
           {message}
         </h2>
 
       <p className="paragraph-main">
-        Question {currentIndex + 1} of {totalQuestions}
+        Question {currentIndex + 1} of {totalQuestions} 📝
       </p>
 
       {!isCorrect && (
@@ -44,7 +44,7 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
         </div>
       )}
 
-      <p className="paragraph-main">Correct answer:</p>
+      <p className="paragraph-main">Correct answer ✅:</p>
       <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
 
       <img

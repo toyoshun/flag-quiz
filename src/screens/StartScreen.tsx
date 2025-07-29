@@ -48,10 +48,10 @@ export const StartScreen: React.FC<{
   return (
     <div className="screen-wrapper">
       <div className="card">
-        <h1 className="start-title">Flag Quiz</h1>
+        <h1 className="start-title">Flag Quiz 🌎</h1>
 
       <div className="select-group">
-        <label className="select-label">Select Mode:</label>
+        <label className="select-label">Select Mode 📖:</label>
         <select
           className="select-input"
           value={selectedMode}
@@ -63,7 +63,7 @@ export const StartScreen: React.FC<{
       </div>
 
       <div className="select-group">
-        <label className="select-label">Select Region:</label>
+        <label className="select-label">Select Region 🗺️:</label>
         <select
           className="select-input"
           value={selectedRegion}
@@ -78,7 +78,7 @@ export const StartScreen: React.FC<{
       </div>
 
       <div className="select-group">
-        <label className="select-label">Number of Questions:</label>
+        <label className="select-label">Number of Questions ❓:</label>
         <select
           className="select-input"
           value={selectedCount}
@@ -97,14 +97,14 @@ export const StartScreen: React.FC<{
 
       {canResume && onResume && (
         <button className="resume-button mb-2" onClick={onResume}>
-          Resume
+          ▶️ Resume
         </button>
       )}
         <button
           className="start-button"
           onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
         >
-          Start
+          🚀 Start
         </button>
       </div>
     </div>
