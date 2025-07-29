@@ -15,7 +15,9 @@ const questionCounts = [5, 10, 20, 30, 40, 50, 100];
 export const StartScreen: React.FC<{
   onStart: (mode: Mode, region: Region, totalQuestions: number) => void;
   allCountries: Country[];
-}> = ({ onStart, allCountries }) => {
+  onResume?: () => void;
+  canResume?: boolean;
+}> = ({ onStart, allCountries, onResume, canResume = false }) => {
   const [selectedMode, setSelectedMode] = useState<Mode>("easy");
   const [selectedRegion, setSelectedRegion] = useState<Region>("World");
   const [selectedCount, setSelectedCount] = useState<number>(10);
@@ -93,13 +95,17 @@ export const StartScreen: React.FC<{
         </div>
         </div>
 
-        <button
-          className="start-button"
-          onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
-        >
-          Start
+        {canResume && onResume && (
+        <button className="resume-button mb-2" onClick={onResume}>
+          Resume
         </button>
-      </div>
+      )}
+      <button
+        className="start-button"
+        onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
+      >
+        Start
+      </button>
     </div>
   );
 };

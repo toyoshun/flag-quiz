@@ -34,6 +34,10 @@ body {
   @apply px-8 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700;
 }
 
+.resume-button {
+  @apply px-6 py-2 font-semibold text-white transition bg-green-600 rounded hover:bg-green-700;
+}
+
 /* --- Quiz Screen --- */
 .option-container {
   @apply flex flex-col w-full max-w-md gap-4;
