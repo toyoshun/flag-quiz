@@ -7,3 +7,8 @@ export type Country = {
 export type Mode = "easy" | "hard";
 
 export type Region = "World" | "Africa" | "Americas" | "Asia" | "Europe" | "Oceania";
+
+// Screens used by the main application
+export type Screen = "start" | "quiz" | "feedback" | "result";
+// Screen value stored when pausing the quiz
+export type ResumeScreen = Screen | "feedback-next";

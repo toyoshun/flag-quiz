@@ -4,29 +4,12 @@ import { QuizScreen } from "./screens/QuizScreen";
 import { FeedbackScreen } from "./screens/FeedbackScreen";
 import { ResultScreen } from "./screens/ResultScreen";
 import countriesData from "./data/country.json";
-import type { Country, Mode } from "./types";
+import type { Country, Mode, Screen, ResumeScreen } from "./types";
+import { normalizeCountries, filterCountriesByRegion } from "./utils/country";
+import { loadState, saveState, STORAGE_KEY } from "./utils/storage";
 
-type Screen = "start" | "quiz" | "feedback" | "result";
-type ResumeScreen = Screen | "feedback-next";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const normalizeCountries = (data: any[]): Country[] =>
-  data.map((country) => ({
-    name: country.name.common || "Unknown",
-    code: country.cca2 || "",
-    region: country.region || "Other",
-  }));
-
-const filterCountriesByRegion = (
-  countries: Country[],
-  region: string
-): Country[] =>
-  region === "World"
-    ? countries
-    : countries.filter((country) => country.region === region);
-
+// Prepare the country list used throughout the app
 const allCountries = normalizeCountries(countriesData);
-const STORAGE_KEY = "flag-quiz-state";
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<Screen>("start");
@@ -41,29 +24,26 @@ const App: React.FC = () => {
   const [resumeScreen, setResumeScreen] = useState<ResumeScreen>("quiz");
   const correctCountry = countries[questionIndex] ?? ({} as Country);
 
+  // Load persisted quiz state on initial render
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = loadState();
     if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setScreen(parsed.screen ?? "start");
-        setMode(parsed.mode ?? "easy");
-        setQuestionIndex(parsed.questionIndex ?? 0);
-        setScore(parsed.score ?? 0);
-        setCountries(parsed.countries ?? []);
-        setUserAnswer(parsed.userAnswer ?? "");
-        setIsCorrect(parsed.isCorrect ?? false);
-        setTotalQuestions(parsed.totalQuestions ?? 10);
-        setIsPaused(parsed.isPaused ?? false);
-        setResumeScreen((parsed.resumeScreen as ResumeScreen) ?? "quiz");
-      } catch {
-        // ignore parse errors
-      }
+      setScreen((saved.screen as Screen) ?? "start");
+      setMode((saved.mode as Mode) ?? "easy");
+      setQuestionIndex(saved.questionIndex ?? 0);
+      setScore(saved.score ?? 0);
+      setCountries(saved.countries ?? []);
+      setUserAnswer(saved.userAnswer ?? "");
+      setIsCorrect(saved.isCorrect ?? false);
+      setTotalQuestions(saved.totalQuestions ?? 10);
+      setIsPaused(saved.isPaused ?? false);
+      setResumeScreen((saved.resumeScreen as ResumeScreen) ?? "quiz");
     }
   }, []);
 
+  // Persist quiz state whenever relevant values change
   useEffect(() => {
-    const data = {
+    saveState({
       screen,
       mode,
       questionIndex,
@@ -74,8 +54,7 @@ const App: React.FC = () => {
       totalQuestions,
       isPaused,
       resumeScreen,
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    });
   }, [
     screen,
     mode,
@@ -94,6 +73,7 @@ const App: React.FC = () => {
     selectedRegion: string,
     selectedTotal: number
   ) => {
+    // Prepare the quiz using the chosen options
     const filteredCountries = filterCountriesByRegion(
       allCountries,
       selectedRegion
@@ -115,6 +95,7 @@ const App: React.FC = () => {
   };
 
   const handleAnswer = (userAnswer: string) => {
+    // Check if the user's answer matches the correct country
     const isCorrect =
       userAnswer.trim().toLowerCase() === correctCountry.name.toLowerCase();
     if (isCorrect) setScore((prev: number) => prev + 1);
@@ -124,6 +105,7 @@ const App: React.FC = () => {
   };
 
   const nextQuestion = () => {
+    // Advance to the next question or finish the quiz
     if (questionIndex + 1 < totalQuestions) {
       setQuestionIndex((prev: number) => prev + 1);
       setIsCorrect(false);
@@ -144,6 +126,7 @@ const App: React.FC = () => {
   };
 
   const resumeQuiz = () => {
+    // Restore the quiz to the state before it was paused
     setIsPaused(false);
     if (resumeScreen === "feedback-next") {
       nextQuestion();
@@ -153,6 +136,7 @@ const App: React.FC = () => {
   };
 
   const restartQuiz = () => {
+    // Clear any persisted state before starting over
     localStorage.removeItem(STORAGE_KEY);
     setIsPaused(false);
     setScreen("start");
@@ -162,7 +146,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleBeforeUnload = () => {
       const next = screen === "feedback" ? "feedback-next" : screen;
-      const data = {
+      saveState({
         screen: "start",
         mode,
         questionIndex,
@@ -173,8 +157,7 @@ const App: React.FC = () => {
         totalQuestions,
         isPaused: true,
         resumeScreen: next,
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      });
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
