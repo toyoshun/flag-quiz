@@ -39,6 +39,9 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
+      <button className="btn-quit-top" onClick={onQuit}>
+        Quit Quiz
+      </button>
       <p className="mb-4 text-lg font-semibold">
         Question {questionIndex + 1} of {totalQuestions}
       </p>
@@ -84,11 +87,6 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
           </button>
         </div>
       )}
-      <div className="mt-6">
-        <button className="btn-quit" onClick={onQuit}>
-          Quit Quiz
-        </button>
-      </div>
     </div>
   );
 };

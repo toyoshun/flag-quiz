@@ -26,6 +26,9 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
+      <button className="btn-quit-top" onClick={onQuit}>
+        Quit Quiz
+      </button>
       <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
         {message}
       </h2>
@@ -52,9 +55,6 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
       <div className="mt-6">
         <button className="btn-main" onClick={onNext}>
           {buttonText}
-        </button>
-        <button className="btn-quit mt-4" onClick={onQuit}>
-          Quit Quiz
         </button>
       </div>
     </div>
