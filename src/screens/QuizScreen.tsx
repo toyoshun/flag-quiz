@@ -46,7 +46,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
         <div className="flex-1 flex items-center justify-center">
           <img
             src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
-            alt="Flag"
+            alt={`Flag of ${correctCountry.name}`}
             className="flag-image"
           />
         </div>

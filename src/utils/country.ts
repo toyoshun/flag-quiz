@@ -1,4 +1,4 @@
-import type { Country } from "../types";
+import type { Country, Region } from "../types";
 
 /** Shape of the raw country data loaded from JSON */
 interface RawCountry {
@@ -23,6 +23,6 @@ export const normalizeCountries = (data: RawCountry[]): Country[] =>
  */
 export const filterCountriesByRegion = (
   countries: Country[],
-  region: string
+  region: Region
 ): Country[] =>
   region === "World" ? countries : countries.filter((c) => c.region === region);

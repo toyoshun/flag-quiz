@@ -4,7 +4,7 @@ import { QuizScreen } from "./screens/QuizScreen";
 import { FeedbackScreen } from "./screens/FeedbackScreen";
 import { ResultScreen } from "./screens/ResultScreen";
 import countriesData from "./data/country.json";
-import type { Country, Mode, Screen, ResumeScreen } from "./types";
+import type { Country, Mode, Screen, ResumeScreen, Region } from "./types";
 import { normalizeCountries, filterCountriesByRegion } from "./utils/country";
 import { loadState, saveState, STORAGE_KEY } from "./utils/storage";
 
@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
   const handleStart = (
     selectedMode: Mode,
-    selectedRegion: string,
+    selectedRegion: Region,
     selectedTotal: number
   ) => {
     // Prepare the quiz using the chosen options
