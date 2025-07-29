@@ -41,10 +41,10 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
     <div className="screen-wrapper">
       <div className="card">
         <button className="btn-quit-top" onClick={onPause}>
-          Pause Quiz
+          ⏸️ Pause
         </button>
         <p className="mb-4 text-lg font-semibold">
-          Question {questionIndex + 1} of {totalQuestions}
+          Question {questionIndex + 1} of {totalQuestions} 📝
         </p>
 
       <div
@@ -84,7 +84,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
               placeholder="Enter country name"
             />
             <button className="btn-main" onClick={() => handleSubmit(input)}>
-              Submit
+              Submit ✅
             </button>
           </div>
         )}
