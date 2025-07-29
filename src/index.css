@@ -16,7 +16,8 @@ body {
 /* --- Start Screen --- */
 
 .start-title {
-  @apply mb-8 text-4xl font-semibold text-gray-800 animate-fade-in;
+  @apply mb-8 text-4xl font-semibold text-gray-800;
+  animation: fade-in 0.5s ease-out;
 }
 
 .select-group {
@@ -82,7 +83,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  @apply animate-fade-in;
+  animation: fade-in 0.5s ease-out;
 }
 
 .flag-image {
