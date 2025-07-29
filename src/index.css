@@ -79,7 +79,8 @@ body {
 
 .card {
   @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-16 sm:pt-20;
-  height: calc(100svh - 2rem);
+  /* allow the card to shrink when there's little content but never exceed the viewport */
+  max-height: calc(100svh - 2rem);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
