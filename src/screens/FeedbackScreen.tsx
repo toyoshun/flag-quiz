@@ -8,6 +8,7 @@ interface FeedbackScreenProps {
   onNext: () => void;
   currentIndex: number;
   totalQuestions: number;
+  onQuit: () => void;
 }
 
 export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
@@ -17,6 +18,7 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
   onNext,
   currentIndex,
   totalQuestions,
+  onQuit,
 }) => {
   const message = isCorrect ? "Correct! 🎉" : "Wrong! ❌";
   const buttonText =
@@ -50,6 +52,9 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
       <div className="mt-6">
         <button className="btn-main" onClick={onNext}>
           {buttonText}
+        </button>
+        <button className="btn-quit mt-4" onClick={onQuit}>
+          Quit Quiz
         </button>
       </div>
     </div>

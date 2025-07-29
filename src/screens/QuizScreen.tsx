@@ -9,6 +9,7 @@ interface QuizScreenProps {
   totalQuestions: number;
   onAnswer: (userAnswer: string) => void;
   setUserAnswer: (userAnswer: string) => void;
+  onQuit: () => void;
 }
 
 const getOptions = (countries: Country[], correctCountry: Country) => {
@@ -27,6 +28,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
   totalQuestions,
   onAnswer,
   setUserAnswer,
+  onQuit,
 }) => {
   const [input, setInput] = useState("");
 
@@ -82,6 +84,11 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
           </button>
         </div>
       )}
+      <div className="mt-6">
+        <button className="btn-quit" onClick={onQuit}>
+          Quit Quiz
+        </button>
+      </div>
     </div>
   );
 };
