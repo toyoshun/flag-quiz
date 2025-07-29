@@ -12,7 +12,7 @@ body {
 }
 
 .select-group {
-  @apply w-full max-w-xs mb-4;
+  @apply w-full max-w-xs mb-4 mx-auto;
 }
 
 .select-group:last-of-type {
