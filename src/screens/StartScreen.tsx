@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import type { Mode, Region, Country } from "../types";
+import { REGIONS, QUESTION_COUNTS } from "../utils/constants";
 
-const regions: Region[] = [
-  "World",
-  "Africa",
-  "Americas",
-  "Asia",
-  "Europe",
-  "Oceania",
-];
-
-const questionCounts = [5, 10, 20, 30, 40, 50, 100];
+// Initial configuration screen where the user selects mode and region
 
 export const StartScreen: React.FC<{
   onStart: (mode: Mode, region: Region, totalQuestions: number) => void;
@@ -22,28 +14,37 @@ export const StartScreen: React.FC<{
   const [selectedRegion, setSelectedRegion] = useState<Region>("World");
   const [selectedCount, setSelectedCount] = useState<number>(10);
 
-  // 選択中regionの国数を計算
-  const filteredCountries =
-    selectedRegion === "World"
-      ? allCountries
-      : allCountries.filter((c) => c.region === selectedRegion);
+  // Number of countries in the currently selected region
+  const filteredCountries = React.useMemo(
+    () =>
+      selectedRegion === "World"
+        ? allCountries
+        : allCountries.filter((c) => c.region === selectedRegion),
+    [selectedRegion, allCountries]
+  );
   const maxCount = filteredCountries.length;
 
-  // region内の国数以下の選択肢だけ表示
-  const availableCounts = questionCounts.filter((count) => count <= maxCount);
+  // Offer only question counts that fit within this region
+  const availableCounts = React.useMemo(
+    () => QUESTION_COUNTS.filter((count) => count <= maxCount),
+    [maxCount]
+  );
 
-  // 「すべて」選択肢を追加
-  const countsWithAll = [
-    ...availableCounts,
-    ...(availableCounts.includes(maxCount) ? [] : [maxCount]),
-  ];
+  // Add an "All" option representing every country
+  const countsWithAll = React.useMemo(
+    () => [
+      ...availableCounts,
+      ...(availableCounts.includes(maxCount) ? [] : [maxCount]),
+    ],
+    [availableCounts, maxCount]
+  );
 
-  // 選択肢が変更された際に、現在の値が選択肢に存在しなければ修正
+  // Ensure the selected count is valid when the region changes
   React.useEffect(() => {
     if (!countsWithAll.includes(selectedCount)) {
       setSelectedCount(countsWithAll[countsWithAll.length - 1]);
     }
-  }, [selectedRegion]);
+  }, [selectedRegion, countsWithAll, selectedCount]);
 
   return (
     <div className="screen-wrapper">
@@ -70,7 +71,7 @@ export const StartScreen: React.FC<{
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value as Region)}
             >
-              {regions.map((region) => (
+              {REGIONS.map((region) => (
                 <option key={region} value={region}>
                   {region}
                 </option>

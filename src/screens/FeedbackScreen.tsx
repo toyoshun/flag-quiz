@@ -1,6 +1,8 @@
 import React from "react";
 import type { Country } from "../types";
 
+// Shows whether the previous answer was correct and reveals the flag
+
 interface FeedbackScreenProps {
   isCorrect: boolean;
   correctCountry: Country;
@@ -20,6 +22,7 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
   totalQuestions,
   onPause,
 }) => {
+  // Text and next action depend on whether the answer was correct
   const message = isCorrect ? "Correct! 🎉" : "Wrong! ❌";
   const buttonText =
     currentIndex + 1 === totalQuestions ? "See Results 🏁" : "Next Question ➡️";

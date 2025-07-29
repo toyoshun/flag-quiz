@@ -1,5 +1,7 @@
 import React from "react";
 
+// Final screen showing the user's score
+
 interface ResultScreenProps {
   score: number;
   total: number;
