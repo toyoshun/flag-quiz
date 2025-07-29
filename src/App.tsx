@@ -7,6 +7,7 @@ import countriesData from "./data/country.json";
 import type { Country, Mode } from "./types";
 
 type Screen = "start" | "quiz" | "feedback" | "result";
+type ResumeScreen = Screen | "feedback-next";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const normalizeCountries = (data: any[]): Country[] =>
@@ -37,7 +38,7 @@ const App: React.FC = () => {
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [totalQuestions, setTotalQuestions] = useState<number>(10);
   const [isPaused, setIsPaused] = useState<boolean>(false);
-  const [resumeScreen, setResumeScreen] = useState<Screen>("quiz");
+  const [resumeScreen, setResumeScreen] = useState<ResumeScreen>("quiz");
   const correctCountry = countries[questionIndex] ?? ({} as Country);
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const App: React.FC = () => {
         setIsCorrect(parsed.isCorrect ?? false);
         setTotalQuestions(parsed.totalQuestions ?? 10);
         setIsPaused(parsed.isPaused ?? false);
-        setResumeScreen(parsed.resumeScreen ?? "quiz");
+        setResumeScreen((parsed.resumeScreen as ResumeScreen) ?? "quiz");
       } catch {
         // ignore parse errors
       }
@@ -134,14 +135,21 @@ const App: React.FC = () => {
   };
 
   const pauseQuiz = () => {
-    setResumeScreen(screen);
+    const confirmPause = window.confirm("Are you sure you want to pause the quiz?");
+    if (!confirmPause) return;
+    const next = screen === "feedback" ? "feedback-next" : screen;
+    setResumeScreen(next);
     setIsPaused(true);
     setScreen("start");
   };
 
   const resumeQuiz = () => {
-    setScreen(resumeScreen);
     setIsPaused(false);
+    if (resumeScreen === "feedback-next") {
+      nextQuestion();
+    } else {
+      setScreen(resumeScreen);
+    }
   };
 
   const restartQuiz = () => {

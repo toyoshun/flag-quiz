@@ -95,7 +95,7 @@ export const StartScreen: React.FC<{
       </div>
 
       {canResume && onResume && (
-        <button className="start-button mb-2" onClick={onResume}>
+        <button className="resume-button mb-2" onClick={onResume}>
           Resume
         </button>
       )}
