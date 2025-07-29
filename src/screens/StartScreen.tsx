@@ -49,7 +49,7 @@ export const StartScreen: React.FC<{
   return (
     <div className="screen-wrapper">
       <div className="card flex flex-col">
-        <div className="flex-grow">
+        <div className="grow-0 sm:grow">
           <h1 className="start-title">Flag Quiz 🌎</h1>
 
           <div className="select-group">
