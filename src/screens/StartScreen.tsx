@@ -36,12 +36,11 @@ export const StartScreen: React.FC<{
     ...(availableCounts.includes(maxCount) ? [] : [maxCount]),
   ];
 
-  // 選択肢が減った場合、selectedCountが最大値を超えていたら修正
+  // 選択肢が変更された際に、現在の値が選択肢に存在しなければ修正
   React.useEffect(() => {
-    if (selectedCount > maxCount) {
+    if (!countsWithAll.includes(selectedCount)) {
       setSelectedCount(countsWithAll[countsWithAll.length - 1]);
     }
-    // eslint-disable-next-line
   }, [selectedRegion]);
 
   return (
