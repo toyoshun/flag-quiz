@@ -36,6 +36,8 @@ const App: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [totalQuestions, setTotalQuestions] = useState<number>(10);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [resumeScreen, setResumeScreen] = useState<Screen>("quiz");
   const correctCountry = countries[questionIndex] ?? ({} as Country);
 
   useEffect(() => {
@@ -51,6 +53,8 @@ const App: React.FC = () => {
         setUserAnswer(parsed.userAnswer ?? "");
         setIsCorrect(parsed.isCorrect ?? false);
         setTotalQuestions(parsed.totalQuestions ?? 10);
+        setIsPaused(parsed.isPaused ?? false);
+        setResumeScreen(parsed.resumeScreen ?? "quiz");
       } catch {
         // ignore parse errors
       }
@@ -67,6 +71,8 @@ const App: React.FC = () => {
       userAnswer,
       isCorrect,
       totalQuestions,
+      isPaused,
+      resumeScreen,
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }, [
@@ -78,6 +84,8 @@ const App: React.FC = () => {
     userAnswer,
     isCorrect,
     totalQuestions,
+    isPaused,
+    resumeScreen,
   ]);
 
   const handleStart = (
@@ -100,6 +108,8 @@ const App: React.FC = () => {
     setUserAnswer("");
     setIsCorrect(false);
     setTotalQuestions(selectedTotal);
+    setIsPaused(false);
+    setResumeScreen("quiz");
     setScreen("quiz");
   };
 
@@ -123,15 +133,32 @@ const App: React.FC = () => {
     }
   };
 
+  const pauseQuiz = () => {
+    setResumeScreen(screen);
+    setIsPaused(true);
+    setScreen("start");
+  };
+
+  const resumeQuiz = () => {
+    setScreen(resumeScreen);
+    setIsPaused(false);
+  };
+
   const restartQuiz = () => {
     localStorage.removeItem(STORAGE_KEY);
+    setIsPaused(false);
     setScreen("start");
   };
 
   return (
     <div className="min-h-screen text-gray-800 bg-gray-50">
       {screen === "start" && (
-        <StartScreen onStart={handleStart} allCountries={allCountries} />
+        <StartScreen
+          onStart={handleStart}
+          allCountries={allCountries}
+          onResume={resumeQuiz}
+          canResume={isPaused}
+        />
       )}
       {screen === "quiz" && (
         <QuizScreen
@@ -142,7 +169,7 @@ const App: React.FC = () => {
           totalQuestions={totalQuestions}
           onAnswer={handleAnswer}
           setUserAnswer={setUserAnswer}
-          onQuit={restartQuiz}
+          onPause={pauseQuiz}
         />
       )}
       {screen === "feedback" && (
@@ -153,7 +180,7 @@ const App: React.FC = () => {
           currentIndex={questionIndex}
           totalQuestions={totalQuestions}
           onNext={nextQuestion}
-          onQuit={restartQuiz}
+          onPause={pauseQuiz}
         />
       )}
       {screen === "result" && (
