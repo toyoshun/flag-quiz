@@ -175,7 +175,7 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <div className="min-h-screen text-gray-800 bg-gray-50">
+    <div className="min-h-screen text-gray-800 bg-gray-100">
       {screen === "start" && (
         <StartScreen
           onStart={handleStart}
