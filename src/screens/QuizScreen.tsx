@@ -39,12 +39,13 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <button className="btn-quit-top" onClick={onPause}>
-        Pause Quiz
-      </button>
-      <p className="mb-4 text-lg font-semibold">
-        Question {questionIndex + 1} of {totalQuestions}
-      </p>
+      <div className="card">
+        <button className="btn-quit-top" onClick={onPause}>
+          Pause Quiz
+        </button>
+        <p className="mb-4 text-lg font-semibold">
+          Question {questionIndex + 1} of {totalQuestions}
+        </p>
 
       <div
         style={{
@@ -61,32 +62,33 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
         />
       </div>
 
-      {mode === "easy" ? (
-        <div className="option-container">
-          {getOptions(countries, correctCountry).map((country) => (
-            <button
-              key={country.name}
-              className="btn-option"
-              onClick={() => handleSubmit(country.name)}
-            >
-              {country.name}
+        {mode === "easy" ? (
+          <div className="option-container">
+            {getOptions(countries, correctCountry).map((country) => (
+              <button
+                key={country.name}
+                className="btn-option"
+                onClick={() => handleSubmit(country.name)}
+              >
+                {country.name}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="items-center option-container">
+            <input
+              className="input-main"
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Enter country name"
+            />
+            <button className="btn-main" onClick={() => handleSubmit(input)}>
+              Submit
             </button>
-          ))}
-        </div>
-      ) : (
-        <div className="items-center option-container">
-          <input
-            className="input-main"
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter country name"
-          />
-          <button className="btn-main" onClick={() => handleSubmit(input)}>
-            Submit
-          </button>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

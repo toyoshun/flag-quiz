@@ -47,7 +47,8 @@ export const StartScreen: React.FC<{
 
   return (
     <div className="screen-wrapper">
-      <h1 className="start-title">Flag Quiz</h1>
+      <div className="card">
+        <h1 className="start-title">Flag Quiz</h1>
 
       <div className="select-group">
         <label className="select-label">Select Mode:</label>
@@ -99,12 +100,13 @@ export const StartScreen: React.FC<{
           Resume
         </button>
       )}
-      <button
-        className="start-button"
-        onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
-      >
-        Start
-      </button>
+        <button
+          className="start-button"
+          onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
+        >
+          Start
+        </button>
+      </div>
     </div>
   );
 };
