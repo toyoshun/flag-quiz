@@ -45,26 +45,27 @@ export const StartScreen: React.FC<{
 
   return (
     <div className="screen-wrapper">
-      <h1 className="start-title">Flag Quiz</h1>
+      <div className="screen-card">
+        <h1 className="start-title">Flag Quiz</h1>
 
-      <div className="select-group">
-        <label className="select-label">Select Mode:</label>
-        <select
-          className="select-input"
-          value={selectedMode}
-          onChange={(e) => setSelectedMode(e.target.value as Mode)}
+        <div className="select-group">
+          <label className="select-label">Select Mode:</label>
+          <select
+            className="select-input"
+            value={selectedMode}
+            onChange={(e) => setSelectedMode(e.target.value as Mode)}
         >
           <option value="easy">Easy (Multiple Choice)</option>
           <option value="hard">Hard (Input)</option>
         </select>
-      </div>
+        </div>
 
-      <div className="select-group">
-        <label className="select-label">Select Region:</label>
-        <select
-          className="select-input"
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value as Region)}
+        <div className="select-group">
+          <label className="select-label">Select Region:</label>
+          <select
+            className="select-input"
+            value={selectedRegion}
+            onChange={(e) => setSelectedRegion(e.target.value as Region)}
         >
           {regions.map((region) => (
             <option key={region} value={region}>
@@ -72,13 +73,13 @@ export const StartScreen: React.FC<{
             </option>
           ))}
         </select>
-      </div>
+        </div>
 
-      <div className="select-group">
-        <label className="select-label">Number of Questions:</label>
-        <select
-          className="select-input"
-          value={selectedCount}
+        <div className="select-group">
+          <label className="select-label">Number of Questions:</label>
+          <select
+            className="select-input"
+            value={selectedCount}
           onChange={(e) => setSelectedCount(Number(e.target.value))}
         >
           {countsWithAll.map((count) => (
@@ -90,14 +91,15 @@ export const StartScreen: React.FC<{
         <div className="text-sm text-gray-500 mt-1">
           {maxCount} countries in this region
         </div>
-      </div>
+        </div>
 
-      <button
-        className="start-button"
-        onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
-      >
-        Start
-      </button>
+        <button
+          className="start-button"
+          onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
+        >
+          Start
+        </button>
+      </div>
     </div>
   );
 };
