@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { Country, Mode } from "../types";
+import { getOptions } from "../utils/quiz";
 
 interface QuizScreenProps {
   mode: Mode;
@@ -12,13 +13,7 @@ interface QuizScreenProps {
   onPause: () => void;
 }
 
-const getOptions = (countries: Country[], correctCountry: Country) => {
-  const shuffled = [...countries]
-    .filter((country) => country.name !== correctCountry.name)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
-  return [...shuffled, correctCountry].sort(() => 0.5 - Math.random());
-};
+// Shows the current question and accepts an answer from the user
 
 export const QuizScreen: React.FC<QuizScreenProps> = ({
   mode,
@@ -32,6 +27,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
 }) => {
   const [input, setInput] = useState("");
 
+  // Forward the selected or typed answer to the parent component
   const handleSubmit = (answer: string) => {
     setUserAnswer(answer);
     onAnswer(answer);
