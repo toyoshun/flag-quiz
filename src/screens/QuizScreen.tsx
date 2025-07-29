@@ -39,7 +39,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <div className="card">
+      <div className="card flex flex-col">
         <button className="btn-quit-top" onClick={onPause}>
           ⏸️ Pause
         </button>
@@ -47,23 +47,16 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
           Question {questionIndex + 1} of {totalQuestions} 📝
         </p>
 
-      <div
-        style={{
-          minHeight: 160,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <img
-          src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
-          alt="Flag"
-          className="flag-image"
-        />
-      </div>
+        <div className="flex-1 flex items-center justify-center">
+          <img
+            src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
+            alt="Flag"
+            className="flag-image"
+          />
+        </div>
 
         {mode === "easy" ? (
-          <div className="option-container">
+          <div className="option-container mb-2">
             {getOptions(countries, correctCountry).map((country) => (
               <button
                 key={country.name}
@@ -75,7 +68,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
             ))}
           </div>
         ) : (
-          <div className="items-center option-container">
+          <div className="items-center option-container mb-2">
             <input
               className="input-main"
               type="text"

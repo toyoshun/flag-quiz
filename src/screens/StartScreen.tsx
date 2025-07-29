@@ -47,59 +47,61 @@ export const StartScreen: React.FC<{
 
   return (
     <div className="screen-wrapper">
-      <div className="card">
-        <h1 className="start-title">Flag Quiz 🌎</h1>
+      <div className="card flex flex-col">
+        <div className="flex-grow">
+          <h1 className="start-title">Flag Quiz 🌎</h1>
 
-      <div className="select-group">
-        <label className="select-label">Select Mode 📖:</label>
-        <select
-          className="select-input"
-          value={selectedMode}
-          onChange={(e) => setSelectedMode(e.target.value as Mode)}
-        >
-          <option value="easy">Easy (Multiple Choice)</option>
-          <option value="hard">Hard (Input)</option>
-        </select>
-      </div>
+          <div className="select-group">
+            <label className="select-label">Select Mode 📖:</label>
+            <select
+              className="select-input"
+              value={selectedMode}
+              onChange={(e) => setSelectedMode(e.target.value as Mode)}
+            >
+              <option value="easy">Easy (Multiple Choice)</option>
+              <option value="hard">Hard (Input)</option>
+            </select>
+          </div>
 
-      <div className="select-group">
-        <label className="select-label">Select Region 🗺️:</label>
-        <select
-          className="select-input"
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value as Region)}
-        >
-          {regions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
+          <div className="select-group">
+            <label className="select-label">Select Region 🗺️:</label>
+            <select
+              className="select-input"
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value as Region)}
+            >
+              {regions.map((region) => (
+                <option key={region} value={region}>
+                  {region}
+                </option>
+              ))}
+            </select>
+          </div>
 
-      <div className="select-group">
-        <label className="select-label">Number of Questions ❓:</label>
-        <select
-          className="select-input"
-          value={selectedCount}
-          onChange={(e) => setSelectedCount(Number(e.target.value))}
-        >
-          {countsWithAll.map((count) => (
-            <option key={count} value={count}>
-              {count === maxCount ? `All (${maxCount})` : count}
-            </option>
-          ))}
-        </select>
-        <div className="text-sm text-gray-500 mt-1">
-          {maxCount} countries in this region
+          <div className="select-group">
+            <label className="select-label">Number of Questions ❓:</label>
+            <select
+              className="select-input"
+              value={selectedCount}
+              onChange={(e) => setSelectedCount(Number(e.target.value))}
+            >
+              {countsWithAll.map((count) => (
+                <option key={count} value={count}>
+                  {count === maxCount ? `All (${maxCount})` : count}
+                </option>
+              ))}
+            </select>
+            <div className="text-sm text-gray-500 mt-1">
+              {maxCount} countries in this region
+            </div>
+          </div>
         </div>
-      </div>
 
-      {canResume && onResume && (
-        <button className="resume-button mb-2" onClick={onResume}>
-          ▶️ Resume
-        </button>
-      )}
+        {canResume && onResume && (
+          <button className="resume-button mb-2" onClick={onResume}>
+            ▶️ Resume
+          </button>
+        )}
         <button
           className="start-button"
           onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}

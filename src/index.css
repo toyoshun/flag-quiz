@@ -63,12 +63,16 @@ body {
 }
 
 /* --- Common --- */
+
 .screen-wrapper {
   @apply flex items-center justify-center min-h-screen px-4 bg-gray-100;
 }
 
 .card {
   @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-20 sm:pt-24;
+  height: calc(100dvh - 2rem);
+  display: flex;
+  flex-direction: column;
 }
 
 .flag-image {
