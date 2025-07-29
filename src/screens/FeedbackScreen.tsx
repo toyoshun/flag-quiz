@@ -8,7 +8,7 @@ interface FeedbackScreenProps {
   onNext: () => void;
   currentIndex: number;
   totalQuestions: number;
-  onQuit: () => void;
+  onPause: () => void;
 }
 
 export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
@@ -18,7 +18,7 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
   onNext,
   currentIndex,
   totalQuestions,
-  onQuit,
+  onPause,
 }) => {
   const message = isCorrect ? "Correct! 🎉" : "Wrong! ❌";
   const buttonText =
@@ -26,8 +26,8 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <button className="btn-quit-top" onClick={onQuit}>
-        Quit Quiz
+      <button className="btn-quit-top" onClick={onPause}>
+        Pause Quiz
       </button>
       <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
         {message}

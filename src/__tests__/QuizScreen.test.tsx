@@ -24,10 +24,11 @@ describe('QuizScreen', () => {
         totalQuestions={1}
         onAnswer={onAnswer}
         setUserAnswer={setUserAnswer}
+        onPause={vi.fn()}
       />
     );
 
-    await userEvent.click(screen.getAllByRole('button')[0]);
+    await userEvent.click(screen.getAllByRole('button')[1]);
     expect(onAnswer).toHaveBeenCalled();
   });
 });

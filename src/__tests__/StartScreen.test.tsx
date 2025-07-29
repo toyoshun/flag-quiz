@@ -30,4 +30,20 @@ describe('StartScreen', () => {
     expect(options).toHaveLength(1);
     expect(options[0]).toHaveTextContent('All (4)');
   });
+
+  it('shows a resume button when canResume is true', async () => {
+    const onResume = vi.fn();
+    render(
+      <StartScreen
+        onStart={vi.fn()}
+        allCountries={sampleCountries}
+        onResume={onResume}
+        canResume
+      />
+    );
+
+    const resumeBtn = screen.getByRole('button', { name: /resume/i });
+    await userEvent.click(resumeBtn);
+    expect(onResume).toHaveBeenCalled();
+  });
 });
