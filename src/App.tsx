@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StartScreen } from "./screens/StartScreen";
 import { QuizScreen } from "./screens/QuizScreen";
 import { FeedbackScreen } from "./screens/FeedbackScreen";
@@ -25,6 +25,7 @@ const filterCountriesByRegion = (
     : countries.filter((country) => country.region === region);
 
 const allCountries = normalizeCountries(countriesData);
+const STORAGE_KEY = "flag-quiz-state";
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<Screen>("start");
@@ -36,6 +37,48 @@ const App: React.FC = () => {
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [totalQuestions, setTotalQuestions] = useState<number>(10);
   const correctCountry = countries[questionIndex] ?? ({} as Country);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setScreen(parsed.screen ?? "start");
+        setMode(parsed.mode ?? "easy");
+        setQuestionIndex(parsed.questionIndex ?? 0);
+        setScore(parsed.score ?? 0);
+        setCountries(parsed.countries ?? []);
+        setUserAnswer(parsed.userAnswer ?? "");
+        setIsCorrect(parsed.isCorrect ?? false);
+        setTotalQuestions(parsed.totalQuestions ?? 10);
+      } catch {
+        // ignore parse errors
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const data = {
+      screen,
+      mode,
+      questionIndex,
+      score,
+      countries,
+      userAnswer,
+      isCorrect,
+      totalQuestions,
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }, [
+    screen,
+    mode,
+    questionIndex,
+    score,
+    countries,
+    userAnswer,
+    isCorrect,
+    totalQuestions,
+  ]);
 
   const handleStart = (
     selectedMode: Mode,
@@ -81,6 +124,7 @@ const App: React.FC = () => {
   };
 
   const restartQuiz = () => {
+    localStorage.removeItem(STORAGE_KEY);
     setScreen("start");
   };
 
