@@ -26,12 +26,13 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <button className="btn-quit-top" onClick={onPause}>
-        Pause Quiz
-      </button>
-      <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
-        {message}
-      </h2>
+      <div className="card">
+        <button className="btn-quit-top" onClick={onPause}>
+          Pause Quiz
+        </button>
+        <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
+          {message}
+        </h2>
 
       <p className="paragraph-main">
         Question {currentIndex + 1} of {totalQuestions}
@@ -52,10 +53,11 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
         className="flag-image"
       />
 
-      <div className="mt-6">
-        <button className="btn-main" onClick={onNext}>
-          {buttonText}
-        </button>
+        <div className="mt-6">
+          <button className="btn-main" onClick={onNext}>
+            {buttonText}
+          </button>
+        </div>
       </div>
     </div>
   );

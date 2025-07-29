@@ -7,7 +7,7 @@ body {
 
 /* --- Start Screen --- */
 .start-container {
-  @apply flex flex-col items-center justify-center min-h-screen px-4 mx-auto max-w-md bg-white/70 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8;
+  @apply card;
 }
 
 .start-title {
@@ -67,7 +67,11 @@ body {
 
 /* --- Common --- */
 .screen-wrapper {
-  @apply relative flex flex-col items-center justify-center min-h-screen px-4 mx-auto max-w-screen-md text-center bg-gray-100 pt-20 sm:pt-24;
+  @apply flex items-center justify-center min-h-screen px-4 bg-gray-100;
+}
+
+.card {
+  @apply relative w-full max-w-md bg-white/80 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 text-center pt-20 sm:pt-24;
 }
 
 .flag-image {
