@@ -26,36 +26,38 @@ export const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
 
   return (
     <div className="screen-wrapper">
-      <button className="btn-quit-top" onClick={onQuit}>
-        Quit Quiz
-      </button>
-      <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
-        {message}
-      </h2>
-
-      <p className="paragraph-main">
-        Question {currentIndex + 1} of {totalQuestions}
-      </p>
-
-      {!isCorrect && (
-        <div className="mb-4 text-red-600">
-          <p className="paragraph-main">Your answer: {userAnswer}</p>
-        </div>
-      )}
-
-      <p className="paragraph-main">Correct answer:</p>
-      <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
-
-      <img
-        src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
-        alt={`Flag of ${correctCountry?.name}`}
-        className="flag-image"
-      />
-
-      <div className="mt-6">
-        <button className="btn-main" onClick={onNext}>
-          {buttonText}
+      <div className="screen-card">
+        <button className="btn-quit-top" onClick={onQuit}>
+          Quit Quiz
         </button>
+        <h2 className={isCorrect ? "heading-correct" : "heading-wrong"}>
+          {message}
+        </h2>
+
+        <p className="paragraph-main">
+          Question {currentIndex + 1} of {totalQuestions}
+        </p>
+
+        {!isCorrect && (
+          <div className="mb-4 text-red-600">
+            <p className="paragraph-main">Your answer: {userAnswer}</p>
+          </div>
+        )}
+
+        <p className="paragraph-main">Correct answer:</p>
+        <p className="mb-4 text-xl font-bold">{correctCountry.name}</p>
+
+        <img
+          src={`https://flagcdn.com/${correctCountry.code.toLowerCase()}.svg`}
+          alt={`Flag of ${correctCountry?.name}`}
+          className="flag-image"
+        />
+
+        <div className="mt-6">
+          <button className="btn-main" onClick={onNext}>
+            {buttonText}
+          </button>
+        </div>
       </div>
     </div>
   );

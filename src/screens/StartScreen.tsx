@@ -45,59 +45,61 @@ export const StartScreen: React.FC<{
 
   return (
     <div className="screen-wrapper">
-      <h1 className="start-title">Flag Quiz</h1>
+      <div className="screen-card">
+        <h1 className="start-title">Flag Quiz</h1>
 
-      <div className="select-group">
-        <label className="select-label">Select Mode:</label>
-        <select
-          className="select-input"
-          value={selectedMode}
-          onChange={(e) => setSelectedMode(e.target.value as Mode)}
-        >
-          <option value="easy">Easy (Multiple Choice)</option>
-          <option value="hard">Hard (Input)</option>
-        </select>
-      </div>
-
-      <div className="select-group">
-        <label className="select-label">Select Region:</label>
-        <select
-          className="select-input"
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value as Region)}
-        >
-          {regions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="select-group">
-        <label className="select-label">Number of Questions:</label>
-        <select
-          className="select-input"
-          value={selectedCount}
-          onChange={(e) => setSelectedCount(Number(e.target.value))}
-        >
-          {countsWithAll.map((count) => (
-            <option key={count} value={count}>
-              {count === maxCount ? `All (${maxCount})` : count}
-            </option>
-          ))}
-        </select>
-        <div className="text-sm text-gray-500 mt-1">
-          {maxCount} countries in this region
+        <div className="select-group">
+          <label className="select-label">Select Mode:</label>
+          <select
+            className="select-input"
+            value={selectedMode}
+            onChange={(e) => setSelectedMode(e.target.value as Mode)}
+          >
+            <option value="easy">Easy (Multiple Choice)</option>
+            <option value="hard">Hard (Input)</option>
+          </select>
         </div>
-      </div>
 
-      <button
-        className="start-button"
-        onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
-      >
-        Start
-      </button>
+        <div className="select-group">
+          <label className="select-label">Select Region:</label>
+          <select
+            className="select-input"
+            value={selectedRegion}
+            onChange={(e) => setSelectedRegion(e.target.value as Region)}
+          >
+            {regions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="select-group">
+          <label className="select-label">Number of Questions:</label>
+          <select
+            className="select-input"
+            value={selectedCount}
+            onChange={(e) => setSelectedCount(Number(e.target.value))}
+          >
+            {countsWithAll.map((count) => (
+              <option key={count} value={count}>
+                {count === maxCount ? `All (${maxCount})` : count}
+              </option>
+            ))}
+          </select>
+          <div className="text-sm text-gray-500 mt-1">
+            {maxCount} countries in this region
+          </div>
+        </div>
+
+        <button
+          className="start-button"
+          onClick={() => onStart(selectedMode, selectedRegion, selectedCount)}
+        >
+          Start
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+body {
+  @apply min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 text-gray-900 font-sans;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto,
+    sans-serif;
+}
 
 /* --- Start Screen --- */
 .start-container {
@@ -6,11 +13,11 @@
 }
 
 .start-title {
-  @apply mb-8 text-3xl font-bold;
+  @apply mb-8 text-4xl font-extrabold tracking-tight;
 }
 
 .select-group {
-  @apply w-full max-w-xs mb-4;
+  @apply w-full max-w-xs mb-4 mx-auto;
 }
 
 .select-group:last-of-type {
@@ -26,7 +33,7 @@
 }
 
 .start-button {
-  @apply px-6 py-2 font-semibold text-white transition bg-blue-600 rounded hover:bg-blue-700;
+  @apply px-8 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700;
 }
 
 /* --- Quiz Screen --- */
@@ -35,21 +42,21 @@
 }
 
 .input-main {
-  @apply w-full p-2 text-lg border rounded;
+  @apply w-full p-2 text-lg border rounded-lg;
 }
 
 .btn-option {
-  @apply w-full max-w-[320px] mx-auto px-4 py-2 text-lg text-gray-800 bg-white border 
-         border-blue-500 rounded shadow hover:bg-blue-100 transition text-center;
+  @apply w-full max-w-[320px] mx-auto px-6 py-2 text-lg text-gray-800 bg-white border border-blue-500 rounded-full shadow hover:bg-blue-100 transition text-center;
 }
 
 /* --- Feedback Screen --- */
+
 .heading-correct {
-  @apply mb-4 text-3xl font-bold text-green-600;
+  @apply mb-4 text-3xl font-semibold text-green-600;
 }
 
 .heading-wrong {
-  @apply mb-4 text-3xl font-bold text-red-600;
+  @apply mb-4 text-3xl font-semibold text-red-600;
 }
 
 /* --- Result Screen --- */
@@ -59,30 +66,33 @@
 
 /* --- Common --- */
 .screen-wrapper {
-  @apply relative flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100;
+  @apply relative flex flex-col items-center justify-center min-h-screen px-4 w-full;
+}
+
+.screen-card {
+  @apply relative w-full max-w-md p-6 bg-white/80 rounded-xl shadow-lg backdrop-blur border border-gray-200 mx-auto text-center;
 }
 
 .flag-image {
-  @apply object-contain h-40 w-auto mb-4 bg-blue-50 border border-gray-200 shadow mx-auto;
+  @apply object-contain h-40 w-auto mb-4 bg-white border border-gray-200 shadow rounded-lg mx-auto;
 }
 
 .btn-main {
-  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700;
+  @apply w-full max-w-xs px-8 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700;
 }
 
 .btn-quit {
-  @apply w-full max-w-xs px-4 py-2 font-semibold text-white transition bg-red-600 rounded hover:bg-red-700;
+  @apply w-full max-w-xs px-8 py-3 font-semibold text-white transition bg-red-600 rounded-full hover:bg-red-700;
 }
 
 .btn-quit-top {
-  @apply absolute top-4 right-4 px-3 py-1 font-semibold text-white transition bg-red-600 rounded hover:bg-red-700;
+  @apply absolute top-4 right-4 px-3 py-1 font-semibold text-white transition bg-red-600 rounded-full hover:bg-red-700;
 }
 
 .heading-main {
-  @apply mb-4 text-3xl font-bold;
+  @apply mb-4 text-4xl font-extrabold tracking-tight;
 }
 
 .paragraph-main {
-  @apply mb-2 text-lg;
+  @apply mb-2 text-lg text-gray-700;
 }
-

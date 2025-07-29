@@ -13,15 +13,17 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
 }) => {
   return (
     <div className="screen-wrapper">
-      <h2 className="heading-main">Quiz Finished!</h2>
-      <p className="paragraph-main">You scored:</p>
-      <p className="text-score">
-        {score} / {total}
-      </p>
+      <div className="screen-card">
+        <h2 className="heading-main">Quiz Finished!</h2>
+        <p className="paragraph-main">You scored:</p>
+        <p className="text-score">
+          {score} / {total}
+        </p>
 
-      <button className="btn-main" onClick={onRestart}>
-        Play Again
-      </button>
+        <button className="btn-main" onClick={onRestart}>
+          Play Again
+        </button>
+      </div>
     </div>
   );
 };
