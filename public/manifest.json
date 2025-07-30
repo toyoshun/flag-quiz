@@ -1,0 +1,13 @@
+{
+  "name": "Flag Quiz",
+  "short_name": "Flags",
+  "start_url": ".",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
